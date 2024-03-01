@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import apiClient from "../Services/api-client";
 import { CanceledError } from "axios";
 
-interface Game {
+//این اینترفیس رو اکسپورت کردیم تا ازش در کامپوننتای دیگه هم استفاده کینم و اونجا ایمپورتشون کنیم مثل گیم کارد
+export interface Game {
   id: number;
   name: string;
+  background_image: string; //add in part 11 1:30
 }
 
 interface FetchGamesResponses {
