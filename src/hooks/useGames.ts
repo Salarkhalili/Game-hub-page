@@ -7,6 +7,14 @@ export interface Game {
   id: number;
   name: string;
   background_image: string; //add in part 11 1:30
+  //   parent_platforms: platform[]; //!wrong interface!   watch part 12  2:02
+  parent_platforms: { platform: platform }[];
+}
+
+export interface platform {
+  id: number;
+  name: string;
+  slug: string;
 }
 
 interface FetchGamesResponses {
