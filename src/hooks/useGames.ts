@@ -9,6 +9,7 @@ export interface Game {
   background_image: string; //add in part 11 1:30
   //   parent_platforms: platform[]; //!wrong interface!   watch part 12  2:02
   parent_platforms: { platform: platform }[];
+  metacritic: number; //!part 13
 }
 
 export interface platform {
