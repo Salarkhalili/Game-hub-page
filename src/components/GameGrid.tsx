@@ -20,7 +20,7 @@ const GameGrid = () => {
         {/* <SimpleGrid columns={2} spacing={10}> */}
         {/* بصوزت هارد ورد ستون هارو بهش دادیم که تو همه دیوایس ها یکسانه و این خوب نیست */}
         {games.map((game) => (
-          <GameCard game={game} />
+          <GameCard key={game.id} game={game} />
         ))}
       </SimpleGrid>
     </>

@@ -1,7 +1,8 @@
-import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import { CriticScore } from "./CriticScore";
+import getCropedImageUrl from "./Image-url";
 
 //ما باید داده های گیم رو به این کارد بدیم تا روی خودش نمایش بده پس از پراپس استفاده میکنیم
 interface props {
@@ -11,7 +12,7 @@ interface props {
 const GameCard = ({ game }: props) => {
   return (
     <Card borderRadius="10" overflow="hidden">
-      <Image src={game.background_image} />
+      <Image src={getCropedImageUrl(game.background_image)} />
       <CardBody>
         <Heading fontSize="2xl">{game.name}</Heading>
         {/* {game.parent_platforms.map( platform => <Text>{platform.platform.name}</Text>)}
