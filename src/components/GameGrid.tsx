@@ -16,9 +16,8 @@ const GameGrid = () => {
         ))}
       </ul> */}
       <SimpleGrid
-        justifyContent="center"
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={10}
+        spacing={5}
         padding="15px"
       >
         {/* <SimpleGrid columns={2} spacing={10}> */}

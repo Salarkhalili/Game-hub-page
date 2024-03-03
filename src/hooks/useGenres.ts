@@ -2,6 +2,7 @@ import useData from "./usedata";
 export interface Genre {
   id: number;
   name: string;
+  image_background: string;
 }
 
 const useGenre = () => useData<Genre>("/genres");
