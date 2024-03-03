@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import apiClient from "../Services/api-client";
-import { CanceledError } from "axios";
+import useData from "./usedata";
 
 //این اینترفیس رو اکسپورت کردیم تا ازش در کامپوننتای دیگه هم استفاده کینم و اونجا ایمپورتشون کنیم مثل گیم کارد
 export interface Game {
@@ -18,33 +16,6 @@ export interface platform {
   slug: string;
 }
 
-interface FetchGamesResponses {
-  count: number;
-  results: Game[];
-}
-
-const useGames = () => {
-  const [games, setGame] = useState<Game[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoding] = useState(false);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    setIsLoding(true);
-    apiClient
-      .get<FetchGamesResponses>("/games", { signal: controller.signal })
-      .then((res) => {
-        setGame(res.data.results);
-        setIsLoding(false);
-      })
-      .catch((err) => {
-        if (err instanceof CanceledError) return;
-        setError(err.message);
-        setIsLoding(false);
-      });
-    return () => controller.abort();
-  }, []);
-  return { games, error, isLoading };
-};
+const useGames = () => useData<Game>("/games");
 
 export default useGames;
