@@ -1,6 +1,5 @@
 import { GameQuery } from "../App";
-import { Genre } from "./useGenres";
-import { Platform } from "./usePlatform";
+
 import useData from "./usedata";
 
 //این اینترفیس رو اکسپورت کردیم تا ازش در کامپوننتای دیگه هم استفاده کینم و اونجا ایمپورتشون کنیم مثل گیم کارد
