@@ -12,6 +12,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 function App() {
   //! برای اشتراک گذاشتن یک استیت بین دو کامپوننت متفاوت باید اون رو به کامپوننت والدشون یعنی اپ در اینجا بدیم(در اینجا منظور لیست زانرا و کارد گرید هستش)
@@ -33,7 +34,9 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
