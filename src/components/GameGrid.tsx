@@ -12,9 +12,12 @@ interface props {
 const GameGrid = ({ gameQuery }: props) => {
   const { data, error, isLoading } = useGames(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  // if (error) return <Text>{error}</Text>;
   return (
     <>
-      {error && <Text>{error}</Text>}
+      {error && <Text>{error}</Text>} //!we can instead of this use a if
+      //!function and delete <></>
       {/* <ul>
         {games.map((game) => (
           <li key={game.id}>{game.name}</li>
