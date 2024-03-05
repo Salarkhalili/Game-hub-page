@@ -10,6 +10,8 @@ export interface Game {
   //   parent_platforms: platform[]; //!wrong interface!   watch part 12  2:02
   parent_platforms: { platform: platform }[];
   metacritic: number; //!part 13
+  rating_top: number; //!part35  ما با این کار داریم چون اعدادش صحیح هستش اما پایینی مقادیر اعشاری هم دارن فعلا کاری باش نداریم
+  rating: number; //!35
 }
 
 export interface platform {

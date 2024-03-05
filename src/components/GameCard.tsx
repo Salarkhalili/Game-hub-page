@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import { CriticScore } from "./CriticScore";
 import getCropedImageUrl from "./Image-url";
+import Emoji from "./Emoji";
 
 //ما باید داده های گیم رو به این کارد بدیم تا روی خودش نمایش بده پس از پراپس استفاده میکنیم
 interface props {
@@ -25,7 +26,10 @@ const GameCard = ({ game }: props) => {
           />
           <CriticScore score={game.metacritic} />
         </HStack>
-        <Heading fontSize="2xl">{game.name}</Heading>
+        <Heading fontSize="2xl">
+          {game.name}
+          <Emoji rating={game.rating_top} />
+        </Heading>
       </CardBody>
     </Card>
   );
