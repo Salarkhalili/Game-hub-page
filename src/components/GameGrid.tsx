@@ -16,7 +16,7 @@ const GameGrid = ({ gameQuery }: props) => {
   // if (error) return <Text>{error}</Text>;
   return (
     <>
-      //!we can instead of this use a if function and delete <></>
+      {/* //!we can instead of this use a if function and delete <></> */}
       {error && <Text>{error}</Text>}
       {/* <ul>
         {games.map((game) => (
