@@ -1,4 +1,3 @@
-import platforms from "../data/platforms";
 import useData from "./usedata";
 // import useData from "./usedata";
 
